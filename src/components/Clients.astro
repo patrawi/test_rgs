@@ -45,9 +45,8 @@ const marqueeClients = [
 			</div>
 
 			<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-				{featuredClients.map((client, index) => (
-
-						<div class="text-center" key={`featured-${index}`} >
+				{featuredClients.map((client) => (
+					<div class="text-center">
 							<Image
 								src={client.logo}
 								alt={client.name}
@@ -82,8 +81,8 @@ const marqueeClients = [
 				<!-- Marquee Track -->
 				<div class="flex animate-marquee">
 					{/* First set */}
-					{marqueeClients.map((client, index) => (
-						<div key={`marquee-1-${index}`} class="flex-shrink-0 px-6">
+					{marqueeClients.map((client) => (
+					<div class="flex-shrink-0 px-6">
 							<div class="bg-white rounded-lg px-6 py-4 border border-gray-200 hover:border-blue-200 transition-all group min-w-[200px]">
 								<div class="flex items-center gap-3">
 									<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -97,8 +96,8 @@ const marqueeClients = [
 						</div>
 					))}
 					{/* Duplicate for seamless loop */}
-					{marqueeClients.map((client, index) => (
-						<div key={`marquee-2-${index}`} class="flex-shrink-0 px-6">
+					{marqueeClients.map((client) => (
+					<div class="flex-shrink-0 px-6">
 							<div class="bg-white rounded-lg px-6 py-4 border border-gray-200 hover:border-blue-200 transition-all group min-w-[200px]">
 								<div class="flex items-center gap-3">
 									<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
