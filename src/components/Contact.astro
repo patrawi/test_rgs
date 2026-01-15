@@ -1,0 +1,194 @@
+---
+const contactInfo = {
+	companyName: 'บริษัท รักษาความปลอดภัย รอยัลการ์ด เซอร์วิสเซส จำกัด',
+	address: 'เลขที่ 300/44 โครงการพรีเมียมเพลส ถ.นวมินทร์ แขวงนวมินทร์ เขตบึงกุ่ม กรุงเทพมหานคร 10240',
+	phone: '02-379-1713-4',
+	hotline1: '096-564-5493 (คุณเอก)',
+	hotline2: '065-294-1962 (คุณแคนดี้)',
+	email: 'royalguardservices2016@gmail.com',
+	lineId: '0816968904',
+	note: 'บริการประเมินราคาเบื้องต้นฟรี ก่อนตัดสินใจจ้างงาน!',
+	license: 'ตภ.2600068'
+};
+
+
+---
+
+<section id="contact" class="section-padding bg-navy-900">
+	<div class="container-custom">
+		<div class="text-center mb-16">
+			<p class="section-subtitle">ติดต่อเรา</p>
+			<h2 class="section-title">ช่องทางติดต่อ</h2>
+			<p class="text-gray-400 max-w-2xl mx-auto mt-4">
+				{contactInfo.note}
+			</p>
+		</div>
+
+		<!-- Contact Info Cards -->
+		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+			<div class="bg-navy-950 rounded-lg p-6 border border-white/5 hover:border-blue-900/30 transition-all">
+				<div class="w-12 h-12 bg-blue-900/10 rounded-lg flex items-center justify-center mb-4">
+					<svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+					</svg>
+				</div>
+				<h3 class="font-semibold text-white mb-2">ที่อยู่บริษัท</h3>
+				<p class="text-gray-400 text-sm leading-relaxed">{contactInfo.address}</p>
+			</div>
+
+			<div class="bg-navy-950 rounded-lg p-6 border border-white/5 hover:border-blue-900/30 transition-all">
+				<div class="w-12 h-12 bg-blue-900/10 rounded-lg flex items-center justify-center mb-4">
+					<svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+					</svg>
+				</div>
+				<h3 class="font-semibold text-white mb-2">โทรศัพท์</h3>
+				<a href={`tel:${contactInfo.phone.replace(/-/g, '')}`} class="text-gray-400 hover:text-amber-400 transition-colors block mb-1">
+					{contactInfo.phone}
+				</a>
+				<a href={`tel:${contactInfo.hotline1.replace(/-/g, '').replace(/\s/g, '')}`} class="text-amber-400 hover:text-amber-300 transition-colors block text-sm">
+					สายด่วน: {contactInfo.hotline1}
+				</a>
+				<a href={`tel:${contactInfo.hotline2.replace(/-/g, '').replace(/\s/g, '')}`} class="text-amber-400 hover:text-amber-300 transition-colors block text-sm">
+					สายด่วน: {contactInfo.hotline2}
+				</a>
+			</div>
+
+			<div class="bg-navy-950 rounded-lg p-6 border border-white/5 hover:border-blue-900/30 transition-all">
+				<div class="w-12 h-12 bg-blue-900/10 rounded-lg flex items-center justify-center mb-4">
+					<svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+					</svg>
+				</div>
+				<h3 class="font-semibold text-white mb-2">อีเมล</h3>
+				<a href={`mailto:${contactInfo.email}`} class="text-gray-400 hover:text-amber-400 transition-colors">
+					{contactInfo.email}
+				</a>
+			</div>
+
+			<div class="bg-navy-950 rounded-lg p-6 border border-white/5 hover:border-blue-900/30 transition-all">
+				<div class="w-12 h-12 bg-blue-900/10 rounded-lg flex items-center justify-center mb-4">
+					<svg class="w-6 h-6 text-blue-900" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+					</svg>
+				</div>
+				<h3 class="font-semibold text-white mb-2">LINE</h3>
+				<p class="text-gray-400">Line ID: {contactInfo.lineId}</p>
+			</div>
+		</div>
+
+		<!-- Contact Form -->
+		<div class="bg-navy-950 rounded-lg p-8 border border-white/5 mb-16">
+			<h3 class="text-2xl font-bold text-white mb-6 text-center">ส่งข้อความหาเรา</h3>
+			<form class="max-w-2xl mx-auto space-y-6" id="contact-form">
+				<div class="grid md:grid-cols-2 gap-6">
+					<div>
+						<label for="name" class="block text-sm font-medium text-gray-300 mb-2">ชื่อ-นามสกุล</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-400 transition-colors"
+							placeholder="กรอกชื่อของคุณ"
+						/>
+					</div>
+					<div>
+						<label for="phone" class="block text-sm font-medium text-gray-300 mb-2">เบอร์โทรศัพท์</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							required
+							class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-400 transition-colors"
+							placeholder="08x-xxx-xxxx"
+						/>
+					</div>
+				</div>
+
+				<div>
+					<label for="email" class="block text-sm font-medium text-gray-300 mb-2">อีเมล</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						required
+						class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-400 transition-colors"
+						placeholder="your@email.com"
+					/>
+				</div>
+
+				<div>
+					<label for="service" class="block text-sm font-medium text-gray-300 mb-2">บริการที่สนใจ</label>
+					<select
+						id="service"
+						name="service"
+						class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-amber-400 transition-colors"
+					>
+						<option value="">เลือกบริการ</option>
+						<option value="security-guard">บริการรักษาความปลอดภัย</option>
+						<option value="cleaning">บริการทำความสะอาด</option>
+						<option value="duo-care">Duo Care (บริการผสมผสาน)</option>
+						<option value="smart-security">ระบบ Smart Security</option>
+						<option value="other">อื่นๆ</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="message" class="block text-sm font-medium text-gray-300 mb-2">ข้อความ</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="4"
+						class="w-full px-4 py-3 bg-navy-900 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors resize-none"
+						placeholder="รายละเอียดเพิ่มเติม..."
+					></textarea>
+				</div>
+
+				<button type="submit" class="w-full btn-primary text-center py-4">
+					ส่งข้อความ
+				</button>
+
+				<p id="form-message" class="text-center text-sm hidden"></p>
+			</form>
+		</div>
+
+
+		<!-- Map -->
+		<div class="rounded-lg overflow-hidden h-96 border border-white/5">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.8487!2d100.6535!3d13.7865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ3JzExLjUiTiAxMDDCsDM5JzEyLjYiRQ!5e0!3m2!1sen!2sth!4v1600000000000!5m2!1sen!2sth"
+				class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-300"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+				title="RGS Office Location"
+			></iframe>
+		</div>
+	</div>
+</section>
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement | null;
+	const formMessage = document.getElementById('form-message');
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		// Get form data
+		if (!form || !formMessage) return;
+		const formData = new FormData(form);
+
+		// Here you would typically send the data to your backend
+		// For now, we'll just show a success message
+		formMessage.textContent = 'ขอบคุณสำหรับข้อความของคุณ! เราจะติดต่อกลับโดยเร็วที่สุด';
+		formMessage.classList.remove('hidden', 'text-red-500');
+		formMessage.classList.add('text-green-500');
+		form.reset();
+
+		// Hide message after 5 seconds
+		setTimeout(() => {
+			formMessage.classList.add('hidden');
+		}, 5000);
+	});
+</script>

@@ -1,0 +1,151 @@
+---
+import { Image } from 'astro:assets';
+import serviceBgImage from '../assets/images/cleaning_service.jpg';
+import installationBgImage from '../assets/images/installation_service.png';
+import securityBgImage from '../assets/images/security_service.jpg';
+const services = [
+	{
+		title: 'บริการรักษาความปลอดภัย',
+		subtitle: 'Security Guard Services',
+		description: 'บริการจัดหาเจ้าหน้าที่รักษาความปลอดภัยทั้งเพศชายและหญิง สำหรับหมู่บ้านจัดสรร คอนโด อาคารสำนักงาน โรงงาน และสถานที่ราชการ',
+		features: [
+			'มาตรฐาน SOP และ NSRS',
+			'การฝึกอบรมครบวงจร',
+			'Emergency Team พร้อมเข้างาน',
+			'การดับเพลิงและปฐมพยาบาล'
+		],
+		image : securityBgImage,
+
+	},
+	{
+		title: 'บริการทำความสะอาด',
+		subtitle: 'Cleaning Services',
+		description: 'บริการทำความสะอาดครบวงจรด้วยทีมงานมืออาชีพและอุปกรณ์ทันสมัย ครอบคลุมอาคาร สำนักงาน และที่พักอาศัย',
+		features: [
+			'Big Cleaning ครั้งใหญ่',
+			'ดูแลต่อเนื่องประจำ',
+			'บริการซักพรม',
+			'ล้างพื้นขัดเงา'
+		],
+		image : serviceBgImage
+	},
+	{
+		title: 'เทคโนโลยีและอุปกรณ์',
+		subtitle: 'Technology & Equipment',
+		description: 'บริการติดตั้งและดูแลระบบความปลอดภัยทางเทคโนโลยี พร้อมระบบ Real-time monitoring',
+		features: [
+			'กล้องวงจรปิด (CCTV)',
+			'ระบบไม้กั้น Easy Pass',
+			'แอปพลิเคชันบริหารจัดการ',
+			'ระบบรายงานเหตุฉุกเฉิน'
+		],
+		image: installationBgImage
+	}
+];
+---
+
+<section id="services" class="section-padding bg-gray-50">
+	<div class="container-custom">
+		<!-- Section Header -->
+		<div class="text-center mb-16">
+			<p class="section-subtitle text-amber-600">บริการของเรา</p>
+			<h2 class="section-title text-navy-950">บริการหลักของเรา</h2>
+			<p class="text-gray-600 max-w-2xl mx-auto mt-4">
+				บริการครบวงจรด้วยมาตรฐานสากล (SOP, NSRS) ผสานเทคโนโลยีทันสมัย เพื่อความปลอดภัยสูงสุดของคุณ
+			</p>
+		</div>
+
+		<!-- Service Cards -->
+		<div class="grid md:grid-cols-3 gap-6">
+			{services.map((service, index) => (
+				<div class="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
+					<!-- Background Image -->
+					<div class="absolute inset-0">
+						<Image
+							src={service.image}
+							alt={service.title}
+							width={600}
+							height={800}
+							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+							format="webp"
+						/>
+					</div>
+
+					<!-- Gradient Overlay -->
+					<div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/70 to-transparent transition-all duration-500 group-hover:from-navy-950 group-hover:via-navy-950/95 group-hover:to-navy-950/60"></div>
+
+					<!-- Decorative Gradient Accent -->
+					<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+						{index === 0 && <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent"></div>}
+						{index === 1 && <div class="absolute inset-0 bg-gradient-to-br from-amber-400/30 to-transparent"></div>}
+						{index === 2 && <div class="absolute inset-0 bg-gradient-to-br from-green-500/30 to-transparent"></div>}
+					</div>
+
+					<!-- Content -->
+					<div class="absolute inset-0 p-8 flex flex-col justify-end transition-all duration-500">
+						<!-- Icon -->
+						<div class="mb-6 transform transition-transform duration-500 group-hover:translate-y-2">
+							<div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
+								{index === 0 && (
+									<svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+									</svg>
+								)}
+								{index === 1 && (
+									<svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+									</svg>
+								)}
+								{index === 2 && (
+									<svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+									</svg>
+								)}
+							</div>
+						</div>
+
+						<!-- Title & Subtitle -->
+						<h3 class="text-2xl font-bold text-white mb-2 transition-all duration-500 group-hover:translate-y-2">{service.title}</h3>
+						<p class="text-sm text-white/80 mb-4 transition-all duration-500 group-hover:translate-y-2">{service.subtitle}</p>
+
+						<!-- Description (Hidden initially, shows on hover) -->
+						<p class="text-gray-200 text-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+							{service.description}
+						</p>
+
+						<!-- Features (Hidden initially, shows on hover) -->
+						<ul class="space-y-2 opacity-0 translate-y-4 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
+							{service.features.map(feature => (
+								<li class="flex items-center gap-2 text-white/90 text-sm">
+									<span class={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+										index === 0 ? 'bg-blue-400' : index === 1 ? 'bg-amber-400' : 'bg-green-400'
+									}`}></span>
+									{feature}
+								</li>
+							))}
+						</ul>
+
+						<!-- CTA (Hidden initially, shows on hover) -->
+						<a href="#contact" class="inline-flex items-center gap-2 text-white font-semibold text-sm mt-4 opacity-0 translate-y-4 transition-all duration-500 delay-150 group-hover:opacity-100 group-hover:translate-y-0">
+							<span>
+								{index === 0 && 'สอบถามบริการรักษาความปลอดภัย'}
+								{index === 1 && 'สอบถามบริการทำความสะอาด'}
+								{index === 2 && 'สอบถามบริการเทคโนโลยี'}
+							</span>
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- CTA -->
+		<div class="text-center mt-16">
+			<a href="#contact" class="btn-primary text-lg">
+				ขอใบเสนอราคาฟรี
+			</a>
+		</div>
+	</div>
+</section>

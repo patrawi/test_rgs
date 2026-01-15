@@ -1,0 +1,75 @@
+---
+const title = 'ไว้วางใจโดย';
+const subtitle = 'หน่วยงานราชการ รัฐวิสาหกิจ และภาคเอกชนชั้นนำ';
+
+const government = [
+	{ name: 'สำนักงานทรัพย์สินพระมหากษัตริย์', short: 'CPB' },
+	{ name: 'ที่พักข้าราชบริพารในพระองค์ 904', short: '904' },
+	{ name: 'การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย', short: 'EGAT' },
+	{ name: 'สถาบันอาหาร', short: 'NFI' },
+	{ name: 'ธนาคารออมสิน', short: 'GSB' }
+];
+
+const residential = [
+	{ name: 'นาราสิริ', short: 'Narasiri' },
+	{ name: 'คริสตัล โซลานา', short: 'Crystal Solana' },
+	{ name: 'บ้านกลางเมือง', short: 'Urbanion' },
+	{ name: 'S-Sense', short: 'S-Sense' }
+];
+
+const corporate = [
+	{ name: 'Huawei', short: 'Huawei' },
+	{ name: 'Samsung', short: 'Samsung' },
+	{ name: 'True', short: 'True' },
+	{ name: 'Canon', short: 'Canon' },
+	{ name: 'Sharp', short: 'Sharp' }
+];
+---
+
+<section class="py-16 bg-navy-900 border-y border-white/5">
+	<div class="container-custom">
+		<div class="text-center mb-12">
+			<h2 class="text-2xl font-bold text-white mb-2">{title}</h2>
+			<p class="text-gray-400">{subtitle}</p>
+		</div>
+
+		<!-- Government Agencies -->
+		<div class="mb-10">
+			<p class="text-sm text-blue-900 font-semibold mb-4 uppercase tracking-wider">หน่วยงานราชการ & รัฐวิสาหกิจ</p>
+			<div class="flex flex-wrap items-center justify-center gap-8">
+				{government.map(client => (
+					<div class="flex items-center gap-3 px-6 py-3 bg-navy-950 rounded-lg border border-white/5 hover:border-blue-900/30 transition-all">
+						<div class="w-2 h-2 bg-blue-900 rounded-full"></div>
+						<span class="text-gray-300 font-medium">{client.name}</span>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Luxury Residential -->
+		<div class="mb-10">
+			<p class="text-sm text-amber-400 font-semibold mb-4 uppercase tracking-wider">โครงการที่พักอาศัยระดับลักชูรี</p>
+			<div class="flex flex-wrap items-center justify-center gap-8">
+				{residential.map(client => (
+					<div class="flex items-center gap-3 px-6 py-3 bg-navy-950 rounded-lg border border-white/5 hover:border-amber-400/30 transition-all">
+						<div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+						<span class="text-gray-300 font-medium">{client.name}</span>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Corporate -->
+		<div>
+			<p class="text-sm text-green-400 font-semibold mb-4 uppercase tracking-wider">องค์กรธุรกิจและอุตสาหกรรม</p>
+			<div class="flex flex-wrap items-center justify-center gap-8">
+				{corporate.map(client => (
+					<div class="flex items-center gap-3 px-6 py-3 bg-navy-950 rounded-lg border border-white/5 hover:border-green-500/30 transition-all">
+						<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+						<span class="text-gray-300 font-medium">{client.name}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
